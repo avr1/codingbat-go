@@ -3,13 +3,13 @@ package list1
 // Given an array of ints, return true if 6 appears as either the first or last
 // element in the array. The array will be length 1 or more.
 func FirstLast6(i []int) bool {
-	return false
+	return (i[0] == 6 || i[len(i)-1] == 6)
 }
 
 // Given 2 arrays of ints, a and b, return true if they have the same first
 // element or they have the same last element. Both arrays will be length 1 or more.
 func CommonEnd(a, b []int) bool {
-	return false
+	return (b[0] == a[0] || b[len(b)-1] == a[len(a)-1])
 }
 
 // Given an array of ints length 3, return a new array with the elements in
