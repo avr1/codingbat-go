@@ -15,31 +15,47 @@ func CommonEnd(a, b []int) bool {
 // Given an array of ints length 3, return a new array with the elements in
 // reverse order, so [3]int{1, 2, 3} becomes [3]int{3, 2, 1}.
 func Reverse3(a [3]int) [3]int {
-	return [3]int{}
+	var k [3]int
+	for i := len(a) - 1; i >= 0; i-- {
+		k[2-i] = a[i]
+	}
+	return k
 }
 
 // Given 2 int arrays, a and b, each length 3, return a new array length 2
 // containing their middle elements.
 func MiddleWay(a, b [3]int) [2]int {
-	return [2]int{}
+	return [2]int{a[1], b[1]}
 }
 
 // Given an array of ints, return true if the array is length 1 or more, and
 // the first element and the last element are equal.
 func SameFirstLast(i []int) bool {
-	return false
+	return len(i) >= 1 && (i[0] == i[len(i)-1])
 }
 
 // Given an array of ints length 3, return the sum of all the elements
-func Sum3(i [3]int) int {
-	return 0
+func Sum3(a [3]int) int {
+	i := 0
+	for j := 0; j < len(a); j++ {
+		i += a[j]
+	}
+	return i
 }
 
 // Given an array of ints length 3, figure out which is larger, the first or
 // last element in the array, and set all the other elements to be that value.
 // Return the changed array.
 func MaxEnd3(a [3]int) [3]int {
-	return [3]int{}
+	var i int
+	if a[0] > a[2] {
+		i = a[0]
+	} else if a[2] > a[0] {
+		i = a[2]
+	} else {
+		i = a[0]
+	}
+	return [3]int{i, i, i}
 }
 
 // Given an array of ints, return a new array length 2 containing the first and
